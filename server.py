@@ -6,10 +6,11 @@
 # Import the sentiment_analyzer function from the package created: TODO
 import flask from Flask
 from flask import requests, render_template
+from sentiment_analysis import sentiment_analyzer
 #Initiate the flask app : TODO
 
 @app.route("/sentimentAnalyzer", methods="POST")
-def sent_analyzer():
+def sent_analyzer(text_for_analysis):
     ''' This code receives the text from the HTML interface and 
         runs sentiment analysis over it using sentiment_analysis()
         function. The output returned shows the label and its confidence 
